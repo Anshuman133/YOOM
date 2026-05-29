@@ -23,26 +23,20 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
-      <ClerkProvider
-        appearance={{
-          layout: {
-            socialButtonsVariant: "iconButton",
-            logoImageUrl: "/icons/yoom-logo.svg",
-          },
-          variables: {
-            colorText: "#fff",
-            colorPrimary: "#0E78F9",
-            colorBackground: "#1C1F2E",
-            colorInputBackground: "#252A41",
-            colorInputText: "#fff",
-          },
-        }}
-      >
-        <body className={`${inter.className} bg-dark-2`}>
+      <body className={`${inter.className} bg-dark-2`}>
+        <ClerkProvider
+          appearance={{
+            layout: {
+              socialButtonsVariant: "iconButton",
+              logoImageUrl: "/icons/yoom-logo.svg",
+            },
+        
+          }}
+        >
           <Toaster />
           {children}
-        </body>
-      </ClerkProvider>
+        </ClerkProvider>
+      </body>
     </html>
   );
-};
+}
